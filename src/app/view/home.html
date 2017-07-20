@@ -1,0 +1,128 @@
+<app-header></app-header>
+
+<div class="bannerbox">
+  <div class="overlayer">
+    <div class="container">
+      <h1>WE RAISE OUR FACILITIES, NOT EYEBROWS</h1>
+      <div class="formbanner">
+        <form>
+          <ul class="innerfoem">
+            <li>
+              <select class="form-control" id="" name="city" [(ngModel)] = "homesearch.city">
+                <option disabled value="Destination">Destination</option>
+                <option *ngFor="let row of icities; let i = index" [value]=row.name>{{row.name}}</option>
+                
+              </select>
+            </li>
+            <li class="timeslot">
+			        <input type="text" readonly class="form-control" (blur)="showTime()" name="checkin" id="datepicker" [(ngModel)] = "homesearch.checkin" placeholder="Check In">
+              <div class="timepanel">
+                <button (click)="setDatesOne()" class="btn-btn-danger">10am to 7pm</button>
+                <button (click)="setDatesTwo()" class="btn-btn-danger">8pm to 8am</button>
+                <button (click)="setMultipleDates()" class="btn-btn-danger">Multiple day stay</button>
+                
+              </div>
+            </li>
+            <li>
+              <input type="text" readonly class="form-control" name="checkout" id="datepickers" [(ngModel)] = "homesearch.checkout" placeholder="Check Out">
+            </li>
+            <li>
+              <select class="form-control" (change)="checkRooms()" name="noofguest" [(ngModel)] = "homesearch.noofguest">
+                  <option disabled value="No of Guest">No of Guest</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </li>
+            <li>
+              <select class="form-control" name="noofrooms"  [(ngModel)] = "homesearch.noofrooms">
+                <option disabled value="No of Rooms">No of Rooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </li>
+            <li>
+              <button type="submit" class="btn btn-default" (click)="setOutDate()">Search</button>
+            </li>
+          </ul>
+        </form>
+      </div>
+      <p>Rooms for unmarried couples, because we know that real love doesn't need any certificates</p>
+    </div>
+  </div>
+</div>
+<div class="aboutbox">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="aboutinner">
+          <h1>About us</h1>
+          <p>People claim that they understand love and keep love above everything else but, when times to prove it, they take a step back. All the love and understanding takes the back seat and people start talking about ethics and morals. If you don’t believe us, try booking a room at a hotel, you will get our point.</p>
+          <a href="#" class="butmore">Read More</a> </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="abouimg"> <img src="assets/images/abimg.jpg" alt="img"> </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="testmo">
+  <div class="overlayer">
+    <div class="container">
+      <h1>Testimonial</h1>
+      <hr>
+      <div class='row'>
+        <div class='col-md-offset-1 col-md-10'>
+          <div class="carousel slide" data-ride="carousel" id="quote-carousel"> 
+            <!-- Bottom Carousel Indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#quote-carousel" *ngFor="let row of itestimonial; let i = index" [ngClass]="i == 0?'active':''" [attr.data-slide-to]=i >
+
+{{i}}
+              </li>
+              
+            </ol>
+            
+            <!-- Carousel Slides / Quotes -->
+            <div class="carousel-inner"> 
+              
+              <!-- Quote 1 -->
+              <div class="item" *ngFor="let row of itestimonial; let i = index" [ngClass]="i == 0?'active':''">
+                <blockquote>
+                  <div class="row">
+                    <div class="col-sm-2 text-center"> <img class="img-circle" src="http://www.reactiongifs.com/r/overbite.gif" style="width: 100px;height:100px;"> 
+                    </div>
+                    <div class="col-sm-10">
+                      <p>{{row.testimonialContent}}</p>
+                      <small>{{row.testimonialName}}</small> </div>
+                  </div>
+                </blockquote>
+              </div>
+              <!-- Quote 2 -->
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="feabox">
+  <div class="container">
+    <h1>FEATURED HOTELS</h1>
+    <section class="center autoplay slider">
+      <div *ngFor="let row of ihotels; let i = index"><img src="/uploads/{{row.imgfolder[0].filename}}" alt="img" style="width: 290px;height:230px;"> </div>
+    </section>
+  </div>
+</div>
+<app-footer></app-footer>

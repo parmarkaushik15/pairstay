@@ -1,0 +1,31 @@
+<app-header></app-header>
+<div class="col-md-12">
+    <div class="row">
+        <div class="about-us-header">
+            <h1>Faq's</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="about-data">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default" *ngFor="let row of ifaq; let i = index">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne{{i}}">
+                                {{row.question}}
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne{{i}}" class="panel-collapse collapse">
+                            <div class="panel-body">
+                               {{row.answer}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

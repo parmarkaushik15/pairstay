@@ -1,0 +1,32 @@
+<header>
+  <div class="toppart">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-xs-12 pull-right">
+          <ul class="number">
+            <li><a href="mailto:support@pairstay.com"><i class="fa fa-envelope"></i> support@pairstay.com</a></li>
+            <li><a href="tel:7827449562"><i class="fa fa-phone"></i> +91-7827449562</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mian-nav">
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a href="/home" class="navbar-brand"><img src="assets/images/logo.png" alt="logo"></a> </div>
+        <div class="navbar-collapse collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li [ngClass]="current_url == '/home'?'active':''"> <a href="/home">Home</a></li>
+            <li [ngClass]="current_url == '/hotels'?'active':''"><a href="/hotels">Hotels</a></li>
+            <li [ngClass]="current_url == '/about'?'active':''"><a href="/about">About Us</a></li>
+            <li [ngClass]="current_url == '/contact'?'active':''"><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <!-- /.nav-collapse --> 
+      </nav>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,45 @@
+<app-header></app-header>
+<div class="col-md-12">
+    <div class="row">
+        <div class="about-us-header">
+            <h1>Book Now</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="about-data mid-part">
+                <div class="col-md-12" style="margin-bottom:15px;">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" [(ngModel)] = "bookHotel.fullname"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email"  class="form-control" [(ngModel)] = "bookHotel.email"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact</label>
+                            <input type="text"  class="form-control" [(ngModel)] = "bookHotel.contact"/>
+                        </div>
+                        <div class="form-group sidebar">
+                            <button type="button" id="booknow" class="btn btn-default" (click)="approvePayment()">Payment</button>
+          
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="overlayer-text">
+                                <h1>{{hotel.hotelName}}</h1>
+                                <p>{{hotel.addressOne}}, {{hotel.city}}</p>
+
+                                <p>Check In : {{bookHotel.checkin}} To {{bookHotel.checkout}}</p>
+                                <p>No of Guest : {{bookHotel.noofguest}}</p>
+                                <p>No of Rooms : {{bookHotel.noofrooms}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

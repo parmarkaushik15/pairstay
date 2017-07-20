@@ -1,0 +1,15 @@
+@import url('plugins/datatables/dataTables.bootstrap.css');
+.login-page, .register-page {
+    background: #d2d6de;
+    width: 100%;
+    height: 100vh;
+    padding-top: 0px;
+    overflow: hidden !important;
+}
+.content-wrapper {
+    min-height: 547px !important;
+}
+.selected {
+    background: #3c8dbc !important;
+    color: #fff !important;
+}

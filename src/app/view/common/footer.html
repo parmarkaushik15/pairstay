@@ -1,0 +1,27 @@
+<div class="footer">
+  <div class="container">
+    <ul class="ftnav">
+      <li><a href="/blog">Blog </a></li>
+      <li><a href="/cancellation">Cancellation </a></li>
+      <li><a href="/privacy">Privacy policy</a></li>
+      <li><a href="/terms"> Terms and conditions </a></li>
+      <li><a href="/faq">FAQ's</a></li>
+      <li><a href="/about">About us </a></li>
+      <li><a href="/contact">Contact us</a></li>
+    </ul>
+  </div>
+  <div class="copy">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7">
+          <p>Copyright © {{date | date:'yyyy'}}, {{domain}}. All Rights Reserved</p>
+        </div>
+        <div class="col-sm-5 col-xs-12 pull-right">
+          <ul class="sicon">
+            <li  *ngFor="let row of isocial; let i = index" ><a [href]=row.link target="_blank" class="fa" [ngClass]=row.icon></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

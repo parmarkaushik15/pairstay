@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="col-md-12">
+    <div class="row">
+        <div class="about-us-header">
+            <h1>Blogs</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="about-data">
+              <div class="blog-list" *ngFor="let row of iblogs; let i = index">
+                  <div class="col-md-3" style="padding-left:0px;">
+                     <img src="/uploads/{{row.imageurl}}" style="width:100%;height:185px;"/>  
+                  </div>
+                  <div class="col-md-9" style="padding-left:0px;">
+                      <h3>{{row.name}}</h3>
+                      <div class="content-section"  [innerHTML]="row.content"></div>
+                      <p class="col-md-6" style="padding-left:0px;"><strong>Tags : </strong>{{row.tags}}</p>
+                      <p class="col-md-6 text-right" style="text-align:right;padding-right:0px;"><strong>Publish Date : </strong> {{row.postdate | date:'medium'}}     </p>
+                      <div class="text-right">
+                          <a class="btn btn-primary" [routerLink]="['/bloginfo',row._id]">View More</a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

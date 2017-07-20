@@ -1,0 +1,77 @@
+<section class="content-header">
+    <h1>
+    Web Pages
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/admin/home/dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Web Pages</li>
+    </ol>
+</section>
+<section class="content">
+      <div class="row">
+        <div class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+        <div class="box box-primary">
+            <div class="box-header">
+              <i class="ion ion-clipboard"></i>
+              <h3 class="box-title">Web Pages</h3>
+              <div class="box-tools pull-right">
+                  
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">  
+                 <table id="example" class="table table-bordered table-striped">
+                      <thead>
+                        <tr>
+                          <th>Page Title</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let row of iwebpages; let i = index" (click)="selectRow(i, row)" [ngClass]="selectedRow == i?'selected':''">
+                          <td>{{row.name}}</td>
+                          <td>
+                            <button type="button" (click)="editRow(row)" class="btn bg-purple btn-xs btn-flat" data-toggle="tooltip" data-placement="bottom" title="Edit">
+                              <i class="fa fa-pencil"></i>
+                            </button>                         
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+            </div>
+            
+            <!-- /.box-body -->
+            
+          </div>
+        </div>
+      </div>
+</section>
+<div id="addNewWebPage" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Social</h4>
+      </div>
+      <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <label for="">Page Title</label>
+                    <input type="text" class="form-control" [(ngModel)] = "webpage.name">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <label for="">Page Content</label>
+                    <ckeditor [(ngModel)]="webpage.content" debounce="500">
+                    </ckeditor>
+                </div>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm pull-left" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default btn-sm"  (click)="createWebPage();" >Save</button>
+      </div>
+    </div>
+  </div>
+</div>

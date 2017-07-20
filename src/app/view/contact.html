@@ -1,0 +1,104 @@
+<app-header></app-header>
+<div class="col-md-12">
+    <div class="row">
+        <div class="about-us-header">
+            <h1>Contact us</h1>
+        </div>
+    </div>
+    <div class="row">
+<section class="page-section color">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div *ngIf="message != ''" class="alert alert-success alert-dismissable fade in">
+                                    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                    <strong>Success!</strong> {{message}}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="contact-info">
+
+                                    <h2 class="block-title"><span>Contact Us</span></h2>
+
+                                    <div class="media-list">
+                                        <div class="media">
+                                            <i class="pull-left fa fa-home"></i>
+                                            <div class="media-body">
+                                                <strong>Address:</strong><br>
+                                                 R-117, Pratap Vihar, Sector-12, Ghaziabad (U.P.) 201009.
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <i class="pull-left fa fa-phone"></i>
+                                            <div class="media-body">
+                                                <strong>Telephone:</strong><br>
+                                                <a href="tel:7827449562">+91-7827449562
+												</a>
+                                            </div>
+                                        </div>
+										
+										
+										<div class="media">
+                                            <i class="pull-left fa fa-envelope-o"></i>
+                                            <div class="media-body">
+                                                <strong>Email</strong><br>
+                                                <a href="mailto:support@pairstay.com">support@pairstay.com</a>
+                                            </div>
+                                        </div>
+						  
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-8 text-left">
+
+                    <h2 class="block-title"><span>Contact Form</span></h2>
+
+                    <!-- Contact form -->
+                    <form name="contact-form" method="post" class="contact-form" id="contact-form1">
+
+                        <div class="outer required">
+                            <div class="form-group af-inner">
+                                <label class="sr-only" for="name">Name</label>
+                                <input type="text" name="name" [(ngModel)] = "contact.name" id="name" placeholder="Name" value="" size="30" data-toggle="tooltip" title="Name is required" class="form-control placeholder">
+                            </div>
+                        </div>
+
+                        <div class="outer required">
+                            <div class="form-group af-inner">
+                                <label class="sr-only" for="email">Email</label>
+                                <input type="text" name="email" [(ngModel)] = "contact.email" id="email" placeholder="Email" value="" size="30" data-toggle="tooltip" title="Email is required" class="form-control placeholder">
+                            </div>
+                        </div>
+
+                        <div class="outer required">
+                            <div class="form-group af-inner">
+                                <label class="sr-only" for="subject">Contact</label>
+                                <input type="text" name="contact" [(ngModel)] = "contact.contact" id="subject" placeholder="Contact" value="" size="30" data-toggle="tooltip" title="Contact is required" class="form-control placeholder">
+                            </div>
+                        </div>
+
+                        <div class="form-group af-inner">
+                            <label class="sr-only" for="input-message">Message</label>
+                            <textarea name="message"  [(ngModel)] = "contact.message" id="input-message" placeholder="Message" rows="4" cols="50" data-toggle="tooltip" title="Message is required" class="form-control placeholder"></textarea>
+                        </div>
+
+                        <div class="outer required">
+                            <div class="form-group af-inner">
+                                <input type="button" (click)="createContact();"  name="submit1" class="form-button form-button-submit btn btn-theme btn-theme-dark" id="submit_btn1" value="Send message">
+                            </div>
+                        </div>
+
+                    </form>
+                    <!-- /Contact form -->
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    </div></div>
+<app-footer></app-footer>

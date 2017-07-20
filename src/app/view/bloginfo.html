@@ -1,0 +1,50 @@
+<app-header></app-header>
+
+<div class="mid-part">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="example example2">
+        <div class="overlayer-text">
+          <div class="col-xs-12 blog-header" style="padding-left:0px">
+            <h1 style="margin-bottom:15px;">{{blog.name}}</h1>
+          </div>
+        </div>
+<div class="blog-image">
+        <img src="/uploads/{{blog.imageurl}}" style="width:100%; height:400px;" alt="Chania">
+</div>
+ 	 <div class="hotel-dtext blog-content">
+        <h2>Description</h2>
+        <div  [innerHTML]="blog.content"></div>
+  </div>
+  <div class="hotel-dtext blog-footer">
+       
+        <div class="col-md-6" style="padding-left:0px">
+           <h2>Tags</h2>
+          {{blog.tags}}</div>
+        <div class="col-md-6" style="padding-left:0px">
+           <h2>Post Date</h2>
+          {{blog.postdate | date:'medium'}} </div>
+  </div>
+  
+
+  </div>
+</div>
+<div class="col-md-4">
+     <div class="sidebar">
+       <div class="hotel-dtext blog-content">
+        <h2>Other Blogs</h2>
+
+        <ul>
+          <li *ngFor="let row of iblogs; let i = index" >
+            <a  [routerLink]="['/bloginfo',row._id]">{{row.name}}</a></li>
+
+        </ul>
+  </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>
